@@ -1,3 +1,5 @@
+관련 블로그 글 : https://jukim2.github.io/dev/
+
 안녕하세요
 
 제가 42서울에서 진행한 프로젝트를 소개해드립니다.
@@ -18,4 +20,4 @@
 |Webserv(Webserver by c++)|110/125|c++을 이용하여 웹서버를 제작해보는 프로젝트입니다.|
 |CPP 2|-|cpp를 추가 학습해보는 프로젝트입니다|
 
-https://jukim2.github.io/posts/42seoul/
+
