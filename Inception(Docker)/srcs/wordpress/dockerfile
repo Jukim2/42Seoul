@@ -1,0 +1,21 @@
+#wordpress
+FROM debian:bullseye
+
+WORKDIR /var/www/html
+
+COPY downloadWP.sh .
+
+# Install PHP and wget
+RUN apt-get update && \
+    apt-get upgrade -y && \
+    apt-get install -y curl && \
+    apt-get install -y sudo && \
+    apt-get install -y php-fpm && \
+    apt-get install -y php-mysql && \
+    mkdir -p /var/run/php && \
+    chmod +x downloadWP.sh
+
+COPY www.conf /etc/php/7.4/fpm/pool.d/www.conf
+
+# Start PHP-FPM
+CMD ["sh", "downloadWP.sh"]
