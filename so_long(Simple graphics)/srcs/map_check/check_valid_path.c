@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   check_valid_path.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jukim2 <jukim2@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kjs <kjs@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 21:52:20 by kjs               #+#    #+#             */
-/*   Updated: 2023/02/01 15:14:45 by jukim2           ###   ########.fr       */
+/*   Updated: 2024/05/06 18:54:40 by kjs              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/game.h"
+#include "game.h"
 
 void	check_valid_path(t_game *game)
 {

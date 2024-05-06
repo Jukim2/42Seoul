@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   character_movement.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jukim2 <jukim2@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kjs <kjs@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 17:39:42 by jukim2            #+#    #+#             */
-/*   Updated: 2023/01/30 10:55:02 by jukim2           ###   ########.fr       */
+/*   Updated: 2024/05/06 18:54:40 by kjs              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/game.h"
+#include "game.h"
 #include "mlx.h"
 
 int	cal_x_displacement(t_game *game, char ch)

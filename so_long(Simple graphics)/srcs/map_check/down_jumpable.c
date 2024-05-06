@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   down_jumpable.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jukim2 <jukim2@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kjs <kjs@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 20:29:47 by jukim2            #+#    #+#             */
-/*   Updated: 2023/02/01 15:21:12 by jukim2           ###   ########.fr       */
+/*   Updated: 2024/05/06 18:54:40 by kjs              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/game.h"
+#include "game.h"
 
 int	is_down_jumpable(t_game *game, char **checker, int x, int y)
 {

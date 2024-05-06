@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   draw_trajectory.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jukim2 <jukim2@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kjs <kjs@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 13:19:42 by jukim2            #+#    #+#             */
-/*   Updated: 2023/01/30 16:42:26 by jukim2           ###   ########.fr       */
+/*   Updated: 2024/05/06 18:54:40 by kjs              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
-#include "../../includes/game.h"
+#include "libft.h"
+#include "game.h"
 #include "mlx.h"
 
 void	put_pix(t_game *game, t_coord *content)

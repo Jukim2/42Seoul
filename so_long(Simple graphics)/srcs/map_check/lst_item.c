@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   lst_item.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jukim2 <jukim2@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kjs <kjs@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 20:06:08 by kjs               #+#    #+#             */
-/*   Updated: 2023/01/30 10:55:02 by jukim2           ###   ########.fr       */
+/*   Updated: 2024/05/06 18:54:40 by kjs              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mlx.h"
-#include "../../includes/game.h"
+#include "game.h"
 
 t_graph	*ft_lstnew_item(int idx)
 {

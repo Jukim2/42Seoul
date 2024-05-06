@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   fallable_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jukim2 <jukim2@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kjs <kjs@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 19:13:53 by jukim2            #+#    #+#             */
-/*   Updated: 2023/02/03 19:45:55 by jukim2           ###   ########.fr       */
+/*   Updated: 2024/05/06 18:54:40 by kjs              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/game_bonus.h"
+#include "game_bonus.h"
 #include "mlx.h"
 
 int	is_fallable_ground(t_game *game, char **checker, int x, int y)

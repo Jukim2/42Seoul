@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jukim2 <jukim2@student.42.fr>              +#+  +:+       +#+         #
+#    By: kjs <kjs@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/28 18:10:56 by jukim2            #+#    #+#              #
-#    Updated: 2023/11/19 21:55:25 by jukim2           ###   ########.fr        #
+#    Updated: 2024/05/06 18:57:00 by kjs              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,7 +55,10 @@ CCFLAGS = -Wall -Wextra -Werror
 NAME = so_long
 LIBFT = libft.a
 LIB = ./libft/libft.a
-MLX_B = libmlx.dylib
+MLIB = ./minilibx/libmlx.a
+MLX = libmlx.a
+INCLUDE = ./includes
+
 
 ifdef WITH_BONUS
 	OBJECTS = $(BONUSOBJS)
@@ -67,22 +70,27 @@ endif
 
 all : $(NAME)
 
-$(NAME): $(LIBFT) $(OBJECTS) 
+$(NAME): $(LIBFT) $(MLX) $(OBJECTS) 
 	cp $(LIB) $(LIBFT)
-	$(CC) -o $(NAME) $(CCFLAGS) $(OBJECTS) $(LIBFT) -L. -lmlx -lft -framework OpenGL -framework Appkit
+	cp $(MLIB) $(MLX)
+	$(CC) -o $(NAME) $(CCFLAGS) $(OBJECTS) $(LIBFT) -I $(INCLUDE) -L. -lmlx -lft -framework OpenGL -framework Appkit
 
-$(LIBFT) : 
+$(LIBFT): 
 	make bonus -C ./libft
+
+$(MLX):
+	make -C ./minilibx
 
 bonus :
 	make WITH_BONUS=1 all
 
 %.o : %.c
-	$(CC) $(CCFLAGS) -c  -o $@ $<
+	$(CC) $(CCFLAGS) -c -I $(INCLUDE) -o $@ $<
 
 clean :
 	make -C ./libft fclean
-	rm -f $(OBJS) $(BONUSOBJS) $(LIBFT)
+	make -C ./minilibx clean
+	rm -f $(OBJS) $(BONUSOBJS) $(LIBFT) $(MLX)
 
 fclean : clean
 	rm -f $(NAME)

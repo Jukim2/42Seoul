@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   set_ptr.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jukim2 <jukim2@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kjs <kjs@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 15:40:52 by jukim2            #+#    #+#             */
-/*   Updated: 2023/01/30 10:55:02 by jukim2           ###   ########.fr       */
+/*   Updated: 2024/05/06 18:54:40 by kjs              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/game.h"
+#include "game.h"
 #include "mlx.h"
 
 void	set_num_ptr(t_game *game)

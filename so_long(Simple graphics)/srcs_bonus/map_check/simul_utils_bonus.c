@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   simul_utils_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jukim2 <jukim2@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kjs <kjs@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 01:56:14 by junseo            #+#    #+#             */
-/*   Updated: 2023/02/03 19:45:55 by jukim2           ###   ########.fr       */
+/*   Updated: 2024/05/06 18:54:40 by kjs              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/game_bonus.h"
-#include "../../includes/libft.h"
+#include "game_bonus.h"
+#include "libft.h"
 #include "mlx.h"
 
 int	update(t_game *game, int x_idx, int y_idx)

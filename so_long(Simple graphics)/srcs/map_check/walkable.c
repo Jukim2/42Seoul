@@ -3,21 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   walkable.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jukim2 <jukim2@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kjs <kjs@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 12:37:30 by kjs               #+#    #+#             */
-/*   Updated: 2023/02/01 15:22:20 by jukim2           ###   ########.fr       */
+/*   Updated: 2024/05/06 18:54:40 by kjs              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/game.h"
+#include "game.h"
 #include "mlx.h"
 
 int	is_walkable_ground(t_game *game, char **checker, int x, int y)
 {
-	int	i;
-
-	i = 0;
 	if (game->y != y)
 		return (0);
 	if (x - game->x == BLOCK && !is_wall_s(game, BLOCK, 0) \

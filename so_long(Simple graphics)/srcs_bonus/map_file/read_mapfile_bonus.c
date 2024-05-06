@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   read_mapfile_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jukim2 <jukim2@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kjs <kjs@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 19:11:07 by jukim2            #+#    #+#             */
-/*   Updated: 2023/02/03 19:56:55 by jukim2           ###   ########.fr       */
+/*   Updated: 2024/05/06 18:54:40 by kjs              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <stdio.h>
-#include "../../includes/libft.h"
-#include "../../includes/game_bonus.h"
+#include "libft.h"
+#include "game_bonus.h"
 
 void	substitute_ch(char *line)
 {
