@@ -1,5 +1,7 @@
 관련 블로그 글 : https://jukim2.github.io/dev/
 
+깃허브 위키 참고 : https://github.com/Jukim2/42Seoul/wiki
+
 안녕하세요
 
 제가 42서울에서 진행한 프로젝트를 소개해드립니다.
