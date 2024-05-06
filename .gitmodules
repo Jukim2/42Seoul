@@ -1,3 +1,6 @@
 [submodule "miniRT(Implement raytrace)"]
 	path = miniRT(Implement raytrace)
 	url = git@github.com:Jukim2/miniRT.git
+[submodule "webserv(Webserver by c++)"]
+	path = webserv(Webserver by c++)
+	url = git@github.com:Jukim2/Webserv.git
