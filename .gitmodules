@@ -1,6 +1,4 @@
 [submodule "Webserv(webserver by c++)"]
 	path = Webserv(webserver by c++)
 	url = https://github.com/Jukim2/Webserv
-[submodule "miniRT(Implement raytrace)"]
-	path = miniRT(Implement raytrace)
-	url = https://github.com/Jukim2/miniRT
+
