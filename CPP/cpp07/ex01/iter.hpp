@@ -12,4 +12,10 @@ void iter(T* arr, std::size_t length, void (*f)(T& a))
 	}
 }
 
+template <typename T>
+void func(T& arg)
+{
+	std::cout << arg << std::endl;
+}
+
 #endif
