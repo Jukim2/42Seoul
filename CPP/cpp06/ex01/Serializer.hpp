@@ -2,11 +2,7 @@
 #define SERIALIZER_HPP
 
 #include <stdint.h>
-
-struct Data
-{
-    int num;
-};
+#include "Data.hpp"
 
 class Serializer
 {

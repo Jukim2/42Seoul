@@ -1,8 +1,8 @@
 #include <iostream>
 #include <string>
 #include <sstream>
-#include <cmath>
 #include <limits>
+#include <math.h>
 #include "ScalarConverter.hpp"
 
 template <typename A, typename B, typename C, typename D>
@@ -16,7 +16,7 @@ void printResult(const A& cChar, const B& cInt, const C& cFloat, const D& cDoubl
 
 void convertToOtherType(const float& cfloat, const double& cDouble)
 {
-    if (cfloat - std::numeric_limits<int>::max() >= 1 || std::numeric_limits<int>::min() - cfloat >= 1 || std::isnan(cDouble))
+    if (cfloat - std::numeric_limits<int>::max() >= 1 || std::numeric_limits<int>::min() - cfloat >= 1 || isnan(cDouble))
         printResult<std::string, std::string, float, double>("impossible", "impossible", cfloat, cDouble);
         // char int impossible
     else if (cfloat > 127)
@@ -29,13 +29,6 @@ void convertToOtherType(const float& cfloat, const double& cDouble)
         printResult<char, int, float, double>(static_cast<char>(cfloat), static_cast<int>(cfloat), cfloat, cDouble);
 }
 
-template <typename T>
-bool isConvertibleTo(const std::string& str, T& conversion) 
-{
-    std::istringstream iss(str);
-
-    return iss >> std::noskipws >> conversion && iss.peek() == EOF;
-}
 
 void convertCharToOther(const char& ch)
 {
@@ -50,6 +43,14 @@ void convertCharToOther(const char& ch)
         printResult<char, int, float, double>(ch, static_cast<int>(ch), static_cast<float>(ch), static_cast<double>(ch));
 }
 
+template <typename T>
+bool isConvertibleTo(const std::string& str, T& conversion) 
+{
+    std::istringstream iss(str);
+
+    return iss >> conversion && iss.peek() == EOF;
+}
+
 void ScalarConverter::convert(const std::string& str)
 {
     char    convertedChar;
@@ -59,18 +60,25 @@ void ScalarConverter::convert(const std::string& str)
     int     len = str.length();
     char    *pos;
 
-    if (len == 0)
+    if (len == 0 || std::isspace(str[0]))
+    {
+        std::cout << "Impossible to handle" << std::endl;
         return;
-    if (isConvertibleTo<char>(str, convertedChar)) 
+    }
+    if (isConvertibleTo<char>(str, convertedChar))
         convertCharToOther(convertedChar);
-    else if (isConvertibleTo<int>(str, convertedInt)) 
+    else if (isConvertibleTo<int>(str, convertedInt))
         convertToOtherType(static_cast<float>(convertedInt), static_cast<double>(convertedInt));
     else
     {
-        if (str[len - 1] == 'f' && (convertedFloat = strtof(str.c_str(), &pos)) && *pos == 'f')
+        if ((convertedFloat = strtof(str.c_str(), &pos)) && *pos == 'f' && str[len - 1] == 'f')
             convertToOtherType(convertedFloat, static_cast<double>(convertedFloat));
         else if ((convertedDouble = strtod(str.c_str(), &pos)) && *pos == '\0')
             convertToOtherType(static_cast<float>(convertedDouble), convertedDouble);
+        else
+        {
+            std::cout << "Impossible to handle" << std::endl;
+        }
     }
 }
 

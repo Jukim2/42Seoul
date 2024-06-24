@@ -3,50 +3,59 @@
 #include <ctime>
 #include "A.hpp"
 #include "B.hpp"
-#include "C.hpp"
+#include "C.hpp" 
+#include "Base.hpp"
 
-// Base * generate(void);
-// It randomly instanciates A, B or C and returns the instance as a Base pointer. Feel free
-// to use anything you like for the random choice implementation.
-// void identify(Base* p);
-// It prints the actual type of the object pointed to by p: "A", "B" or "C".
-// void identify(Base& p);
-// It prints the actual type of the object pointed to by p: "A", "B" or "C". Using a pointer
-// inside this function is forbidden.
 
 Base* generate()
 {
     std::srand(std::time(0));
+    Base *randObject = 0;
 
-    int randomNumber = std::rand();
+    int randomNumber = std::rand() % 3;
     if (randomNumber == 0)
-    {
-        std::cout << "A generated" << std::endl;
-        return (new A);
-    }
+        randObject = new A();
     else if (randomNumber == 1)
-    {
-        std::cout << "B generated" << std::endl;
-        return (new B);
-    }
+        randObject = new B();
     else if (randomNumber == 2)
-    {
-        std::cout << "C generated" << std::endl;
-        return (new C);
-    }
+        randObject = new C();
+
+    return randObject;
 }
 
-void identify(Base* p)
-{
-
+void identify(Base* p) {
+    if (dynamic_cast<A*>(p))
+        std::cout << "A" << std::endl;
+    else if (dynamic_cast<B*>(p))
+        std::cout << "B" << std::endl;
+    else if (dynamic_cast<C*>(p))
+        std::cout << "C" << std::endl;
 }
 
-void identify(Base& p)
-{
+void identify(Base& p) {
+    try {
+        (void)dynamic_cast<A&>(p);
+        std::cout << "A" << std::endl;
+    } catch (const std::bad_cast&) {}
 
+    try {
+        (void)dynamic_cast<B&>(p);
+        std::cout << "B" << std::endl;
+    } catch (const std::bad_cast&) {}
+
+    try {
+        (void)dynamic_cast<C&>(p);
+        std::cout << "C" << std::endl;
+    } catch (const std::bad_cast&) {}
 }
 
-int main()
-{
 
+int main() 
+{
+    Base* p = generate();
+    identify(p);
+    identify(*p);
+
+    delete p;
+    return 0;
 }

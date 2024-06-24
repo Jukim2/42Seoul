@@ -8,4 +8,6 @@ int main()
 
     uintptr_t serializedData = Serializer::serialize(&data);
     Data* dataPtr = Serializer::deserialize(serializedData);
+
+    // unsigned long tmp = (static_cast<unsigned long>(&data));
 }
