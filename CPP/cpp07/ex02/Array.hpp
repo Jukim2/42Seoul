@@ -11,9 +11,9 @@ class Array
         unsigned int len;
 
     public:
-        Array() { arr = new T[0]; len = 0;}
+        Array() : arr(new T[0])m, len(0) {}
         Array(unsigned int n) : arr(new T[n]), len(n) {}
-        Array(Array& other) : arr(new T[other.size()]), len(other.size()) {
+        Array(Array& other) : arr(new T[other.len]), len(other.len) {
             for (unsigned int i = 0; i < len; ++i) {
                 arr[i] = other.arr[i];
             }
@@ -23,15 +23,15 @@ class Array
                 return *this;
             }
             delete[] arr;
-            len = other.size();
+            len = other.len;
             arr = new T[len];
             for (unsigned int i = 0; i < len; ++i) {
                 arr[i] = other.arr[i];
             }
             return *this;
         }
-
         ~Array() { delete[] arr; }
+
         unsigned int size() { return len; }
 
         T& operator[](unsigned int index) {
@@ -47,8 +47,6 @@ class Array
             }
             return arr[index];
         }
-
-
 };
 
 #endif
